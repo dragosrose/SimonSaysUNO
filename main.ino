@@ -646,6 +646,8 @@ void handleLeftArrow(void (*printTab)())
             cursorColumn -= 2;
             if (cursorColumn = 255)
                 cursorColumn = 0;
+            // For some reason without the following line the text is not displayed
+            Serial.println(cursorColumn);
             printTab();
             break;
         default:
@@ -947,13 +949,13 @@ void handleButtonPressed()
                     cycleMode = MENU_CYCLE;
                     EEPROM.update(2, ledBrightness);
                     printText("Brightness set!", 0, 1);
+                    playTone(NOTE_B7, 100);
                     delay(1000);
                     lc.clearDisplay(0);
                     accessMenu(MENU_SETTINGS);
                     lcd.noBlink();
                     clearDisplay();
                     printSettings();
-                    playTone(NOTE_B7, 100);
                 }
                 break;
 
