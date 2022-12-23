@@ -86,4 +86,4 @@ The following components are used in this project:
 - Piezo buzzer
 - Jumper wires
 
-Follow the instructions provided in the code to start the Simon Says game.
+
